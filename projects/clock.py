@@ -9,6 +9,7 @@ seconds_turtle = Turtle()
 minutes_turtle = Turtle()
 hours_turtle = Turtle()
 writer_turtle = Turtle()
+old_day = -1
 
 def draw_hand_shape(hand, head_color, length, head_length):
     hand.pensize(3)
@@ -51,32 +52,37 @@ def get_date_str(now):
     return months[now.month - 1] + " " + str(now.day) + " " + str(now.year)
 
 def display_date(now):
+    global old_day
     writer_turtle.penup()
     writer_turtle.forward(65)
     day_of_week = get_day_of_week_str(now)
-    writer_turtle.write(day_of_week, align='center', font=('Courier', 14, 'bold'))
-    writer_turtle.back(150)
     date_str = get_date_str(now)
-    writer_turtle.write(date_str, align='center', font=('Courier', 14, 'bold'))
+    if now.day != old_day:
+        writer_turtle.clear()
+        writer_turtle.write(day_of_week, align='center', font=('Courier', 14, 'bold'))
+    writer_turtle.back(150)
+    if now.day != old_day:
+        writer_turtle.write(date_str, align='center', font=('Courier', 14, 'bold'))
+    writer_turtle.forward(85)
+    old_day = now.day
 
 def tick():
     now = datetime.today()
     seconds = now.second + now.microsecond * 0.000001
     minutes = now.minute + seconds / 60
     hours = now.hour + minutes / 60
-    for turtle in seconds_turtle, minutes_turtle, hours_turtle, writer_turtle:
+    for turtle in seconds_turtle, minutes_turtle, hours_turtle:
         turtle.reset()
 
+    display_date(now)
     seconds_turtle.setheading(6 * seconds)
     draw_hand_shape(seconds_turtle, 'red', 135, 25)
     minutes_turtle.setheading(6 * minutes)
     draw_hand_shape(minutes_turtle, 'blue', 125, 25)
     hours_turtle.setheading(30 * hours)
     draw_hand_shape(hours_turtle, 'green', 90, 25)
-    display_date(now)
     tracer(False)
     ontimer(tick, 300)
-
 
 display_clockface(160)
 tick()
