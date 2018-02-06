@@ -1,4 +1,4 @@
-# Introduction to Turtle graphics
+# Introduction to Turtle Graphics
 
 ## Learning objectives
 
@@ -13,11 +13,11 @@ motivated, get the pupils to compute the Fibonacci number sequence by hand for a
 managed the get the furthest in the sequence, if the class is bad at focusing provide a reward for the top 5. Quickly
 enter the code for the sequence and run it. They should realise that manual labour is hopeless against a program.
 
-Introduce the final aim of the project, creating your own analogue clock display!
+Introduce the final aim of the project: creating your own analogue clock display!
 
-## Turtles
+## The turtle world
 
-If the pupils are familiar with Cartesian coordinate systems, present the turtle world as the x-y plane. Otherwise,
+If the pupils are familiar with Cartesian-coordinate systems, present the turtle world as the x-y plane. Otherwise,
 present the notion with a grid system.
 
 For now introduce simple commands:
@@ -32,9 +32,9 @@ For the more adventurous pupils wanting to fill in the arrow head like the sampl
 
 ## Practical sample code
 
-Get the students to start thinking about the clock and practice problem solving. The aim of this sessions exercise is to
-provide a sequence of turtle instructions to draw out the hand of a clock. The key idea linking back to geometry is to
-remember that an equilateral triangle has equal angles of 60 degrees.
+Get the students to start thinking about the clock and practise problem solving. The aim of this session's exercise is
+to provide a sequence of turtle instructions to draw out the hand of a clock. The key idea (linking back to elementary
+geometry) is to remember that an equilateral triangle has three equal angles of 60 degrees.
 
 Below is complete sample solution used in the provided demo program.
 ```python
