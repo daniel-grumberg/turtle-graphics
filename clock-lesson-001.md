@@ -5,6 +5,7 @@
 1. Get familiar with the turtle environment
 2. Design a simple sequence of instructions
 3. Express a simple sequence using Python
+4. Gain familiarity with simple arithemetic and turtle commands in Python
 
 ## Motivation
 
@@ -33,8 +34,8 @@ For the more adventurous pupils wanting to fill in the arrow head like the sampl
 ## Practical sample code
 
 Get the students to start thinking about the clock and practise problem solving. The aim of this session's exercise is
-to provide a sequence of turtle instructions to draw out the hand of a clock. The key idea (linking back to elementary
-geometry) is to remember that an equilateral triangle has three equal angles of 60 degrees.
+to provide a sequence of turtle instructions to draw out the seconds hand of a clock. The key idea (linking back to
+elementary geometry) is to remember that an equilateral triangle has three equal angles of 60 degrees.
 
 Below is complete sample solution used in the provided demo program.
 ```python
