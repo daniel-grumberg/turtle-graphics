@@ -11,20 +11,24 @@ hours_turtle = Turtle()
 writer_turtle = Turtle()
 old_day = -1
 
+def draw_filled_triangle(hand, color, length):
+    hand.fillcolor(color)
+    hand.begin_fill()
+    hand.right(90)
+    hand.forward(length / 2)
+    hand.left(120)
+    hand.forward(length)
+    hand.left(120)
+    hand.forward(length)
+    hand.left(120)
+    hand.forward(length / 2)
+    hand.end_fill()
+
 def draw_hand_shape(hand, head_color, length, head_length):
     hand.pensize(3)
     hand.forward(length)
-    hand.fillcolor(head_color)
-    hand.begin_fill()
-    hand.right(90)
-    hand.forward(head_length / 2)
-    hand.left(120)
-    hand.forward(head_length)
-    hand.left(120)
-    hand.forward(head_length)
-    hand.left(120)
-    hand.forward(head_length / 2)
-    hand.end_fill()
+    draw_filled_triangle(hand, head_color, head_length)
+
 
 def display_clockface(radius):
     pensize(7)
@@ -68,7 +72,7 @@ def display_date(now):
 
 def tick():
     now = datetime.today()
-    seconds = now.second + now.microsecond * 0.000001
+    seconds = now.second
     minutes = now.minute + seconds / 60
     hours = now.hour + minutes / 60
     for turtle in seconds_turtle, minutes_turtle, hours_turtle:
@@ -82,7 +86,7 @@ def tick():
     hours_turtle.setheading(30 * hours)
     draw_hand_shape(hours_turtle, 'green', 90, 25)
     tracer(False)
-    ontimer(tick, 300)
+    ontimer(tick, 200)
 
 display_clockface(160)
 tick()
