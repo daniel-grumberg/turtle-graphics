@@ -35,9 +35,9 @@ Conditionals can now be introduced. The Python syntax is as follows:
 
 ```python
 if age < 13:
-    print("Sorry you are to young to register")
+    print("Sorry you can not register")
 elif age >= 25:
-    print("Sorry you are to young to register")
+    print("Sorry you can not register")
 else:
     print("You can now register")
 ```
@@ -48,7 +48,7 @@ now merge two conditions together:
 
 ```python
 if age < 13 and age >= 25:
-    print("Sorry you are to young to register")
+    print("Sorry you can not register")
 ```
 
 ## Practical sample code
