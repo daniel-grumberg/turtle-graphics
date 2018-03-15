@@ -56,10 +56,10 @@ if age < 13 and age >= 25:
 The students should come up with a script along the following lines:
 
 ```python
-age = input("How old are you? ")
+age = int(input("How old are you? "))
 
 if age < 13 or age >= 25:
-    print("Sorry you are to young to register")
+    print("Sorry you can not register")
 else:
     print("You can now register")
 ```
