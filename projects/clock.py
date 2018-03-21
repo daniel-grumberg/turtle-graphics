@@ -9,6 +9,7 @@ seconds_turtle = Turtle()
 minutes_turtle = Turtle()
 hours_turtle = Turtle()
 writer_turtle = Turtle()
+writer_turtle.hideturtle()
 old_day = -1
 
 def draw_filled_triangle(hand, color, length):
@@ -77,7 +78,6 @@ def tick():
     hours = now.hour + minutes / 60
     for turtle in seconds_turtle, minutes_turtle, hours_turtle:
         turtle.reset()
-
     display_date(now)
     seconds_turtle.setheading(6 * seconds)
     draw_hand_shape(seconds_turtle, 'red', 135, 25)
